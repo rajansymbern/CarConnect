@@ -100,7 +100,7 @@
         <div id="lessee-content">
             <section class="hero-bg py-10 md:pt-16 md:pb-32"> <!-- Adjusted py for mobile, and restored md:py for desktop -->
                 <div class="container mx-auto px-6 text-center">
-                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 md:text-white leading-tight">Tired of Leasing a Car?</h1> <!-- Text color changes based on breakpoint -->
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 md:text-white leading-tight">Tired of the Old Way of Leasing a Car?</h1> <!-- Text color changes based on breakpoint -->
                     <div class="mt-4 md:mt-8 max-w-4xl mx-auto p-6 rounded-lg"> <!-- Reduced mt for mobile -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-left">
                            <div class="flex items-center"><svg class="w-6 h-6 text-red-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" /></svg><span class="text-base md:text-lg text-gray-700 md:text-gray-200">Strict & costly mileage caps</span></div> <!-- Text size and color changes -->
