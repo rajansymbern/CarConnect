@@ -1,0 +1,242 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden"
+      style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'
+    >
+      <div>
+        <div class="flex items-center bg-white p-4 pb-2 justify-between">
+          <h2 class="text-[#111518] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pl-12">DriveShare</h2>
+          <div class="flex w-12 items-center justify-end">
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-transparent text-[#111518] gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0"
+            >
+              <div class="text-[#111518]" data-icon="List" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div class="@container">
+          <div class="@[480px]:p-4">
+            <div
+              class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+              style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAG1uHquJOfGlEY5o635Dh_d5dQqoOm7esqlFlbI-nIjbjXUvL7U_GEkl7rKtx6finCiknRL3f5P6drVtdivhUOZQzunWSdaDytwNct5nOmhhbXZ_BsP_rEYZjix9JtRNJE5NzxS4AmTvznpM6P-4JdTITlrOcfD549pWVApDtJeUcK2YuyihM0p-tjQRrx_MI-63ahvQha8AW5ulJECRShWPFQiwcNk7dltZGFbdaVNlaaAXbUzcXDbi7eqbHCj8Uv_R7ArRy2y_s");'
+            >
+              <div class="flex flex-col gap-2 text-center">
+                <h1
+                  class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                >
+                  Share the road with those you trust
+                </h1>
+                <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                  Lease your car to friends and family with ease and confidence.
+                </h2>
+              </div>
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#1990e5] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+              >
+                <span class="truncate">Get Started</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">How it Works</h2>
+        <div class="flex flex-col gap-10 px-4 py-10 @container">
+          <h1
+            class="text-[#111518] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+          >
+            Simple Steps to Get Started
+          </h1>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-0">
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#dce1e5] bg-white p-4 flex-col">
+              <div class="text-[#111518]" data-icon="Car" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M240,112H229.2L201.42,49.5A16,16,0,0,0,186.8,40H69.2a16,16,0,0,0-14.62,9.5L26.8,112H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16V192h96v16a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V128h8a8,8,0,0,0,0-16ZM69.2,56H186.8l24.89,56H44.31ZM64,208H40V192H64Zm128,0V192h24v16Zm24-32H40V128H216ZM56,152a8,8,0,0,1,8-8H80a8,8,0,0,1,0,16H64A8,8,0,0,1,56,152Zm112,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H176A8,8,0,0,1,168,152Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h2 class="text-[#111518] text-base font-bold leading-tight">List Your Car</h2>
+                <p class="text-[#637888] text-sm font-normal leading-normal">Easily list your car on our platform with just a few taps.</p>
+              </div>
+            </div>
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#dce1e5] bg-white p-4 flex-col">
+              <div class="text-[#111518]" data-icon="Users" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h2 class="text-[#111518] text-base font-bold leading-tight">Invite Your Network</h2>
+                <p class="text-[#637888] text-sm font-normal leading-normal">Invite your friends and family to join your private car-sharing network.</p>
+              </div>
+            </div>
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#dce1e5] bg-white p-4 flex-col">
+              <div class="text-[#111518]" data-icon="Handshake" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M119.76,217.94A8,8,0,0,1,112,224a8.13,8.13,0,0,1-2-.24l-32-8a8,8,0,0,1-2.5-1.11l-24-16a8,8,0,1,1,8.88-13.31l22.84,15.23,30.66,7.67A8,8,0,0,1,119.76,217.94Zm132.69-96.46a15.89,15.89,0,0,1-8,9.25l-23.68,11.84-55.08,55.09a8,8,0,0,1-7.6,2.1l-64-16a8.06,8.06,0,0,1-2.71-1.25L35.86,142.87,11.58,130.73a16,16,0,0,1-7.16-21.46L29.27,59.58h0a16,16,0,0,1,21.46-7.16l22.06,11,53-15.14a8,8,0,0,1,4.4,0l53,15.14,22.06-11a16,16,0,0,1,21.46,7.16l24.85,49.69A15.9,15.9,0,0,1,252.45,121.48Zm-46.18,12.94L179.06,80H147.24L104,122c12.66,8.09,32.51,10.32,50.32-7.63a8,8,0,0,1,10.68-.61l34.41,27.57Zm-187.54-18,17.69,8.85L61.27,75.58,43.58,66.73ZM188,152.66l-27.71-22.19c-19.54,16-44.35,18.11-64.91,5a16,16,0,0,1-2.72-24.82.6.6,0,0,1,.08-.08L137.6,67.06,128,64.32,77.58,78.73,50.21,133.46l49.2,35.15,58.14,14.53Zm49.24-36.24L212.42,66.73l-17.69,8.85,24.85,49.69Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h2 class="text-[#111518] text-base font-bold leading-tight">Set Your Terms</h2>
+                <p class="text-[#637888] text-sm font-normal leading-normal">Define your lease terms, including pricing and availability, with full control.</p>
+              </div>
+            </div>
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#dce1e5] bg-white p-4 flex-col">
+              <div class="text-[#111518]" data-icon="Key" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M160,16A80.07,80.07,0,0,0,83.91,120.78L26.34,178.34A8,8,0,0,0,24,184v40a8,8,0,0,0,8,8H72a8,8,0,0,0,8-8V208H96a8,8,0,0,0,8-8V184h16a8,8,0,0,0,5.66-2.34l9.56-9.57A80,80,0,1,0,160,16Zm0,144a63.7,63.7,0,0,1-23.65-4.51,8,8,0,0,0-8.84,1.68L116.69,168H96a8,8,0,0,0-8,8v16H72a8,8,0,0,0-8,8v16H40V187.31l58.83-58.82a8,8,0,0,0,1.68-8.84A64,64,0,1,1,160,160Zm32-84a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h2 class="text-[#111518] text-base font-bold leading-tight">Drive with Confidence</h2>
+                <p class="text-[#637888] text-sm font-normal leading-normal">Enjoy peace of mind with our comprehensive insurance and support.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Benefits of DriveShare</h2>
+        <div class="flex flex-col gap-10 px-4 py-10 @container">
+          <h1
+            class="text-[#111518] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+          >
+            Unlock the Potential of Your Car
+          </h1>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-0">
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#dce1e5] bg-white p-4 flex-col">
+              <div class="text-[#111518]" data-icon="Money" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M128,88a40,40,0,1,0,40,40A40,40,0,0,0,128,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,152ZM240,56H16a8,8,0,0,0-8,8V192a8,8,0,0,0,8,8H240a8,8,0,0,0,8-8V64A8,8,0,0,0,240,56ZM193.65,184H62.35A56.78,56.78,0,0,0,24,145.65v-35.3A56.78,56.78,0,0,0,62.35,72h131.3A56.78,56.78,0,0,0,232,110.35v35.3A56.78,56.78,0,0,0,193.65,184ZM232,93.37A40.81,40.81,0,0,1,210.63,72H232ZM45.37,72A40.81,40.81,0,0,1,24,93.37V72ZM24,162.63A40.81,40.81,0,0,1,45.37,184H24ZM210.63,184A40.81,40.81,0,0,1,232,162.63V184Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h2 class="text-[#111518] text-base font-bold leading-tight">Earn Extra Income</h2>
+                <p class="text-[#637888] text-sm font-normal leading-normal">Generate income by leasing your car during periods it would otherwise be idle.</p>
+              </div>
+            </div>
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#dce1e5] bg-white p-4 flex-col">
+              <div class="text-[#111518]" data-icon="Calendar" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h2 class="text-[#111518] text-base font-bold leading-tight">Flexible Scheduling</h2>
+                <p class="text-[#637888] text-sm font-normal leading-normal">Set your car's availability to fit your schedule, ensuring it's available when you need it.</p>
+              </div>
+            </div>
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#dce1e5] bg-white p-4 flex-col">
+              <div class="text-[#111518]" data-icon="Shield" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M208,40H48A16,16,0,0,0,32,56v58.77c0,89.61,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0c15.2-5.05,91-34.78,91-124.39V56A16,16,0,0,0,208,40Zm0,74.79c0,78.42-66.35,104.62-80,109.18-13.53-4.51-80-30.69-80-109.18V56l160,0Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h2 class="text-[#111518] text-base font-bold leading-tight">Secure and Insured</h2>
+                <p class="text-[#637888] text-sm font-normal leading-normal">Our platform provides insurance coverage and security measures to protect your vehicle.</p>
+              </div>
+            </div>
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#dce1e5] bg-white p-4 flex-col">
+              <div class="text-[#111518]" data-icon="UsersThree" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4ZM190.92,212a8,8,0,1,1-13.84,8,57,57,0,0,0-98.16,0,8,8,0,1,1-13.84-8,72.06,72.06,0,0,1,33.74-29.92,48,48,0,1,1,58.36,0A72.06,72.06,0,0,1,190.92,212ZM128,176a32,32,0,1,0-32-32A32,32,0,0,0,128,176ZM72,120a8,8,0,0,0-8-8A24,24,0,1,1,87.24,82a8,8,0,1,0,15.5-4A40,40,0,1,0,37,117.51,67.94,67.94,0,0,0,9.6,139.19a8,8,0,1,0,12.8,9.61A51.6,51.6,0,0,1,64,128,8,8,0,0,0,72,120Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h2 class="text-[#111518] text-base font-bold leading-tight">Trusted Community</h2>
+                <p class="text-[#637888] text-sm font-normal leading-normal">Share your car within a network of people you know and trust.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Ready to Join?</h2>
+        <div class="flex justify-center">
+          <div class="flex flex-1 gap-3 max-w-[480px] flex-col items-stretch px-4 py-3">
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#1990e5] text-white text-base font-bold leading-normal tracking-[0.015em] w-full"
+            >
+              <span class="truncate">Join Waitlist</span>
+            </button>
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#f0f3f4] text-[#111518] text-base font-bold leading-normal tracking-[0.015em] w-full"
+            >
+              <span class="truncate">Questionnaire</span>
+            </button>
+            <button
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#f0f3f4] text-[#111518] text-base font-bold leading-normal tracking-[0.015em] w-full"
+            >
+              <span class="truncate">Consultation</span>
+            </button>
+          </div>
+        </div>
+        <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#">
+              <div class="text-[#637888]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+            <a href="#">
+              <div class="text-[#637888]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+            <a href="#">
+              <div class="text-[#637888]" data-icon="FacebookLogo" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+          </div>
+          <p class="text-[#637888] text-base font-normal leading-normal">@2024 DriveShare. All rights reserved.</p>
+        </footer>
+      </div>
+      <div><div class="h-5 bg-white"></div></div>
+    </div>
+  </body>
+</html>
