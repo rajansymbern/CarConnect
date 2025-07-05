@@ -67,7 +67,7 @@
                 margin-top: -1rem;
             }
             
-            /* Better touch targets for mobile */
+            /* Better touch targets for  mobile */
             .mobile-touch-target {
                 min-height: 44px;
                 min-width: 44px;

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveShare - Desktop</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+        }
+        
+        /* Desktop-specific optimizations */
+        .desktop-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .desktop-hero {
+            min-height: 80vh;
+            background-attachment: fixed;
+        }
+        
+        .desktop-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        
+        .desktop-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .desktop-button {
+            transition: all 0.2s ease-in-out;
+        }
+        
+        .desktop-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Desktop navigation */
+        .desktop-nav {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        
+        /* Desktop grid layouts */
+        .desktop-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .desktop-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        /* Desktop typography */
+        .desktop-heading {
+            font-size: 3.5rem;
+            line-height: 1.1;
+        }
+        
+        .desktop-subheading {
+            font-size: 1.5rem;
+            line-height: 1.4;
+        }
+        
+        /* Desktop spacing */
+        .desktop-section {
+            padding: 5rem 2rem;
+        }
+        
+        /* Desktop animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Desktop Header -->
+    <header class="desktop-nav sticky top-0 z-50 border-b border-gray-200">
+        <div class="desktop-container">
+            <div class="flex items-center justify-between px-8 py-4">
+                <div class="flex items-center space-x-8">
+                    <h1 class="text-2xl font-bold text-gray-900">DriveShare</h1>
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="#" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">How it Works</a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Benefits</a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Pricing</a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Support</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </button>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Desktop Hero Section -->
+    <section class="desktop-hero relative flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div class="relative z-10 desktop-container text-center px-8 py-20">
+            <div class="max-w-4xl mx-auto animate-fade-in-up">
+                <h1 class="desktop-heading font-black text-white mb-8 leading-tight">
+                    Lease Your Car to Family & Friends
+                </h1>
+                <p class="desktop-subheading text-white mb-12 opacity-90 max-w-2xl mx-auto">
+                    Earn extra income by leasing your car within your trusted network. 
+                    DriveShare makes it simple, secure, and profitable.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button class="desktop-button bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-gray-50 transition-all">
+                        Join Waitlist
+                    </button>
+                    <button class="desktop-button bg-transparent text-white border-2 border-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-blue-600 transition-all">
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desktop How It Works Section -->
+    <section class="desktop-section bg-white">
+        <div class="desktop-container">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">How It Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    DriveShare simplifies leasing your car to your network in just three easy steps
+                </p>
+            </div>
+            
+            <div class="desktop-features-grid">
+                <div class="desktop-card bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-lg">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Connect</h3>
+                    <p class="text-gray-600 text-lg">Invite trusted contacts from your network. Build your community of reliable lessees.</p>
+                </div>
+
+                <div class="desktop-card bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-lg">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Schedule</h3>
+                    <p class="text-gray-600 text-lg">Set your car's availability and let your network know when it's available for lease.</p>
+                </div>
+
+                <div class="desktop-card bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-lg">
+                    <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Earn</h3>
+                    <p class="text-gray-600 text-lg">Get paid securely through our platform. Track earnings and manage payments easily.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desktop Benefits Section -->
+    <section class="desktop-section bg-gray-50">
+        <div class="desktop-container">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Benefits</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    DriveShare offers key advantages for both car owners and renters
+                </p>
+            </div>
+            
+            <div class="desktop-benefits-grid">
+                <div class="desktop-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600"></div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Trust</h3>
+                        <p class="text-gray-600 text-lg mb-4">Lease to known contacts from your trusted network. No strangers, no worries.</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Verified profiles
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Social connections
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="desktop-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600"></div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Flexibility</h3>
+                        <p class="text-gray-600 text-lg mb-4">Control your car's schedule and availability on your own terms.</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Set your own rates
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Choose availability
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="desktop-card bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600"></div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Security</h3>
+                        <p class="text-gray-600 text-lg mb-4">Secure, hassle-free payments and comprehensive insurance coverage.</p>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Secure payments
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Insurance included
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desktop CTA Section -->
+    <section class="desktop-section bg-white">
+        <div class="desktop-container">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Ready to Start Earning?</h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    Join thousands of car owners who are already earning extra income with DriveShare
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="desktop-button bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-blue-700 transition-all">
+                        Take Questionnaire
+                    </button>
+                    <button class="desktop-button bg-gray-100 text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-200 transition-all">
+                        Free Consultation
+                    </button>
+                    <button class="desktop-button bg-gray-100 text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-200 transition-all">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desktop Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="desktop-container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">DriveShare</h3>
+                    <p class="text-gray-400">Making car leasing simple, secure, and profitable for everyone.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">How it Works</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safety</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 DriveShare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
