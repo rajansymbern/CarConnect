@@ -82,17 +82,8 @@
     <div class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden mobile-safe-area">
         <div>
             <!-- Header - Original Style with Mobile Touch Improvements -->
-            <div class="flex items-center bg-white p-4 pb-2 justify-between">
-                <h2 class="text-[#121516] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pl-12">CarConnect</h2>
-                <div class="flex w-12 items-center justify-end">
-                    <button class="mobile-touch-target flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-transparent text-[#121516] gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
-                        <div class="text-[#121516]" data-icon="Question" data-size="24px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                                <path d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"></path>
-                            </svg>
-                        </div>
-                    </button>
-                </div>
+            <div class="flex items-center bg-white p-4 pb-2 justify-center">
+                <h2 class="text-[#121516] text-lg font-bold leading-tight tracking-[-0.015em]">CarConnect</h2>
             </div>
 
             <!-- Hero Section - Original Style with Mobile Optimizations -->
@@ -134,7 +125,7 @@
                         </div>
                         <div class="flex flex-col gap-1">
                             <h2 class="text-[#121516] text-base font-bold leading-tight">Identify</h2>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Explore who you could help with a car.</p>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Explore who needs help with a car.</p>
                         </div>
                     </div>
                     
@@ -170,7 +161,7 @@
                     <h1 class="text-[#121516] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] mx-auto">
                         Benefits
                     </h1>
-                    <p class="text-[#121516] text-base font-normal leading-normal max-w-[720px] mx-auto">CarConnect offers key advantages for car lessors and lessees:</p>
+                    <p class="text-[#121516] text-base font-normal leading-normal max-w-[720px] mx-auto">CarConnect offers key advantages for lessors and lessees:</p>
                 </div>
                 
                 <!-- Mobile-optimized grid: single column on mobile, original grid on larger screens -->
@@ -180,7 +171,7 @@
                              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2u-SJ4obR2ykXD5YYadLGyHaKR-yR4BfH9PpR4nI8dx4TtlFXQdcgW_4m5HCPyo44uOCNrVhof5jHcE-3SqUKofaECpgDXoBO6bCXtzmBUBgm7XWYIw-wojE2wDHVVqSmVizvrZDhmYeewHu4rTpC9GhD-vnUsdTm6MG1BCSKhPn98rk47UMn8nRXiUjQ267F59_aQiDDetlDmxdcj-m_9U_AqoTuKPWgdTaOJ9tg2mmGONeFFFPeaiWkaLAs1PRbLKOHQeRsmZg");'></div>
                         <div>
                             <p class="text-[#121516] text-base font-medium leading-normal">Trust</p>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Lease to known contacts, with peace of mind on both sides.</p>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Lease to people you know, with peace of mind.</p>
                         </div>
                     </div>
                     
@@ -189,7 +180,7 @@
                              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAu3olEfqNiZMGygbYojppWGAXBuPLC7FkbRVbabCBA6LHpi1n6F-oNQ44EATqV6Ug_bJvOKLFZiuwU0ge2J8kJp_TTwuFfdhptNs0cGTO7Xwiok7DIvxgD0k0Q--5XNteRI0eHZN4hE-pSG2xwKc6q44MQbneKFDLgw6RoIaA3bQspuA03I2Xf9qgp_0DxJT48Xfa9RFC5Gf2SuRKmjo2eKOCMO7wY2iL0NgE3y6KUF73Kr8Ayx-12NFiDtUtfHez-NNIB1GBavEc");'></div>
                         <div>
                             <p class="text-[#121516] text-base font-medium leading-normal">Flexibility</p>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Help your friends or family in a way that really fits their needs.</p>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Help your friends or family in a way that fits their needs.</p>
                         </div>
                     </div>
                     
@@ -198,7 +189,7 @@
                              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDA1kGELqPGcQHXageUxgiMiXum_4OMIgwboWio5khFZYSor5IWhSvQNuP0Vz45NSpv_imyepw1-U6CzpCBycsUF9qP3W3HU4XA5fmJGxq6Jrwy2qMNlZge17PuTgmrgkf7PYx82vedb9soKEQZBIug1aY1nOF6KnnHDH-tfUNYCkQUcX8GCu3oCjq1E1-IZQOM73ISHZYiwlYuBYT-uHr7HvVpk2DC0ZG9XnGkQECvwXxOysRyjReydjijvpg0TGriGl1aiMmGL4I");'></div>
                         <div>
                             <p class="text-[#121516] text-base font-medium leading-normal">Returns</p>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">You both gain, with unbeatable benefits.</p>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">You both gain, with unmatched benefits.</p>
                         </div>
                     </div>
                 </div>
@@ -213,51 +204,75 @@
                     <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rchandra-aggie/30min'});return false;" class="mobile-touch-target flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#f1f2f4] text-[#121516] text-base font-bold leading-normal tracking-[0.015em] w-full">
                         <span class="truncate">Schedule Consultation</span>
                     </button>
-                    <a href="https://forms.gle/v2Q6cU2oN1EtVYdt7" target="_blank" class="mobile-touch-target flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#f1f2f4] text-[#121516] text-base font-bold leading-normal tracking-[0.015em] w-full">
-                        <span class="truncate">Learn More</span>
-                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Bottom Navigation - Original Style with Mobile Touch Improvements -->
-        <div>
-            <div class="flex gap-2 border-t border-[#f1f2f4] bg-white px-4 pb-3 pt-2 mobile-safe-area">
-                <a class="mobile-touch-target flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#121516]" href="#">
-                    <div class="text-[#121516] flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="fill">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                            <path d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"></path>
-                        </svg>
+        <!-- Footer -->
+        <footer class="bg-black border-t border-gray-800 mt-16">
+            <div class="max-w-6xl mx-auto px-4 py-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Company Info -->
+                    <div class="col-span-1 md:col-span-2">
+                        <h3 class="text-white text-lg font-bold mb-4">CarConnect</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            Connecting trusted networks for car leasing. Earn extra income by leasing your car to family and friends with peace of mind.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <p class="text-[#121516] text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
-                </a>
-                <a class="mobile-touch-target flex flex-1 flex-col items-center justify-end gap-1 text-[#6a7781]" href="#">
-                    <div class="text-[#6a7781] flex h-8 items-center justify-center" data-icon="Car" data-size="24px" data-weight="regular">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                            <path d="M240,112H229.2L201.42,49.5A16,16,0,0,0,186.8,40H69.2a16,16,0,0,0-14.62,9.5L26.8,112H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16V192h96v16a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V128h8a8,8,0,0,0,0-16ZM69.2,56H186.8l24.89,56H44.31ZM64,208H40V192H64Zm128,0V192h24v16Zm24-32H40V128H216ZM56,152a8,8,0,0,1,8-8H80a8,8,0,0,1,0,16H64A8,8,0,0,1,56,152Zm112,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H176A8,8,0,0,1,168,152Z"></path>
-                        </svg>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">How It Works</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">Benefits</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">Join Waitlist</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">Schedule Consultation</a></li>
+                        </ul>
                     </div>
-                    <p class="text-[#6a7781] text-xs font-medium leading-normal tracking-[0.015em]">Leases</p>
-                </a>
-                <a class="mobile-touch-target flex flex-1 flex-col items-center justify-end gap-1 text-[#6a7781]" href="#">
-                    <div class="text-[#6a7781] flex h-8 items-center justify-center" data-icon="ChatCircleDots" data-size="24px" data-weight="regular">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                            <path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"></path>
-                        </svg>
+
+                    <!-- Legal -->
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="privacy.html" class="text-gray-300 hover:text-white text-sm transition-colors">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">Terms of Service</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">Cookie Policy</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">Accessibility</a></li>
+                        </ul>
                     </div>
-                    <p class="text-[#6a7781] text-xs font-medium leading-normal tracking-[0.015em]">Messages</p>
-                </a>
-                <a class="mobile-touch-target flex flex-1 flex-col items-center justify-end gap-1 text-[#6a7781]" href="#">
-                    <div class="text-[#6a7781] flex h-8 items-center justify-center" data-icon="UserCircle" data-size="24px" data-weight="regular">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                            <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z"></path>
-                        </svg>
+                </div>
+
+                <!-- Bottom Footer -->
+                <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-300 text-sm">
+                        © 2025 CarConnect. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">Contact Us</a>
+                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">Support</a>
+                        <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">FAQ</a>
                     </div>
-                    <p class="text-[#6a7781] text-xs font-medium leading-normal tracking-[0.015em]">Account</p>
-                </a>
+                </div>
             </div>
-            <div class="h-5 bg-white"></div>
-        </div>
+        </footer>
     </div>
 
     <!-- Calendly Widget Script -->
