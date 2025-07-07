@@ -125,7 +125,7 @@
                         </div>
                         <div class="flex flex-col gap-1">
                             <h2 class="text-[#121516] text-base font-bold leading-tight">Identify</h2>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Explore who needs help with a car.</p>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Explore who in your network needs help with a car.</p>
                         </div>
                     </div>
                     
@@ -136,8 +136,8 @@
                             </svg>
                         </div>
                         <div class="flex flex-col gap-1">
-                            <h2 class="text-[#121516] text-base font-bold leading-tight">Manage</h2>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Complete our easy leasing process.</p>
+                            <h2 class="text-[#121516] text-base font-bold leading-tight">Execute</h2>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Complete our easy leasing process; takes 15-20 minutes and we help you every step of the way.</p>
                         </div>
                     </div>
                     
@@ -149,7 +149,7 @@
                         </div>
                         <div class="flex flex-col gap-1">
                             <h2 class="text-[#121516] text-base font-bold leading-tight">Earn</h2>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Get paid securely, every month.</p>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Get paid securely, every month, and start building your fleet business.</p>
                         </div>
                     </div>
                 </div>
