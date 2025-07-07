@@ -171,7 +171,7 @@
                              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2u-SJ4obR2ykXD5YYadLGyHaKR-yR4BfH9PpR4nI8dx4TtlFXQdcgW_4m5HCPyo44uOCNrVhof5jHcE-3SqUKofaECpgDXoBO6bCXtzmBUBgm7XWYIw-wojE2wDHVVqSmVizvrZDhmYeewHu4rTpC9GhD-vnUsdTm6MG1BCSKhPn98rk47UMn8nRXiUjQ267F59_aQiDDetlDmxdcj-m_9U_AqoTuKPWgdTaOJ9tg2mmGONeFFFPeaiWkaLAs1PRbLKOHQeRsmZg");'></div>
                         <div>
                             <p class="text-[#121516] text-base font-medium leading-normal">Impact</p>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Be there for those you care about, by turning your car into an asset.</p>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Help those you care about, by turning your car into an asset.</p>
                         </div>
                     </div>
                     
@@ -198,10 +198,10 @@
             <!-- CTA Section - Original Style with Mobile Touch Improvements -->
             <div id="cta" class="flex justify-center">
                 <div class="flex flex-1 gap-3 max-w-[480px] flex-col items-stretch px-4 py-3">
-                    <a href="https://forms.gle/v2Q6cU2oN1EtVYdt7" target="_blank" class="mobile-touch-target flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#b2d0e5] text-[#121516] text-base font-bold leading-normal tracking-[0.015em] w-full">
+                    <a href="https://forms.gle/v2Q6cU2oN1EtVYdt7" target="_blank" class="mobile-touch-target flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#f1f2f4] text-[#121516] text-base font-bold leading-normal tracking-[0.015em] w-full">
                         <span class="truncate">Join Waitlist</span>
                     </a>
-                    <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rchandra-aggie/30min'});return false;" class="mobile-touch-target flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#f1f2f4] text-[#121516] text-base font-bold leading-normal tracking-[0.015em] w-full">
+                    <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rchandra-aggie/30min'});return false;" class="mobile-touch-target flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#b2d0e5] text-[#121516] text-base font-bold leading-normal tracking-[0.015em] w-full">
                         <span class="truncate">Schedule a Consultation</span>
                     </button>
                 </div>
