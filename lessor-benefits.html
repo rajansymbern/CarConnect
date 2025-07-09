@@ -81,9 +81,27 @@
 <body>
     <div class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden mobile-safe-area">
         <div>
-            <!-- Header - Original Style with Mobile Touch Improvements -->
-            <div class="flex items-center bg-white p-4 pb-2 justify-center">
-                <h2 class="text-[#121516] text-lg font-bold leading-tight tracking-[-0.015em]">CarConnect</h2>
+            <!-- Header - Responsive Desktop/Mobile -->
+            <div class="flex items-center bg-white p-4 pb-2 justify-between">
+                <div class="text-[#121516] text-lg font-bold leading-tight tracking-[-0.015em]">CarConnect</div>
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html#benefits" class="text-[#121516] hover:text-[#2563eb] font-medium transition-colors">Benefits</a>
+                    <a href="pricing.html" class="text-[#121516] hover:text-[#2563eb] font-medium transition-colors">Pricing</a>
+                    <a href="contact.html" class="text-[#121516] hover:text-[#2563eb] font-medium transition-colors">Contact Us</a>
+                </nav>
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-btn" class="md:hidden flex items-center px-2 py-1" aria-label="Open menu">
+                    <svg class="w-7 h-7 text-[#121516]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="md:hidden hidden flex-col bg-white w-full shadow z-50">
+                <a href="index.html#benefits" class="block px-6 py-3 text-[#121516] hover:text-[#2563eb] font-medium border-b border-gray-100">Benefits</a>
+                <a href="pricing.html" class="block px-6 py-3 text-[#121516] hover:text-[#2563eb] font-medium border-b border-gray-100">Pricing</a>
+                <a href="contact.html" class="block px-6 py-3 text-[#121516] hover:text-[#2563eb] font-medium">Contact Us</a>
             </div>
 
             <!-- Hero Section - Original Style with Mobile Optimizations -->
@@ -337,5 +355,17 @@
 
     <!-- Calendly Widget Script -->
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('mobile-menu-btn');
+      var menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function() {
+          menu.classList.toggle('hidden');
+        });
+      }
+    });
+    </script>
 </body>
 </html> 
