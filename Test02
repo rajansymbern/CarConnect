@@ -87,7 +87,7 @@
                 <!-- Desktop Nav -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="#benefits" class="text-[#121516] hover:text-[#2563eb] font-medium transition-colors">Benefits</a>
-                    <a href="#" class="text-[#121516] hover:text-[#2563eb] font-medium transition-colors">Pricing</a>
+                    <a href="pricing.html" class="text-[#121516] hover:text-[#2563eb] font-medium transition-colors">Pricing</a>
                     <a href="contact.html" class="text-[#121516] hover:text-[#2563eb] font-medium transition-colors">Contact Us</a>
                 </nav>
                 <!-- Mobile Hamburger -->
@@ -100,7 +100,7 @@
             <!-- Mobile Menu Dropdown -->
             <div id="mobile-menu" class="md:hidden hidden flex-col bg-white w-full shadow z-50">
                 <a href="#benefits" class="block px-6 py-3 text-[#121516] hover:text-[#2563eb] font-medium border-b border-gray-100">Benefits</a>
-                <a href="#" class="block px-6 py-3 text-[#121516] hover:text-[#2563eb] font-medium border-b border-gray-100">Pricing</a>
+                <a href="pricing.html" class="block px-6 py-3 text-[#121516] hover:text-[#2563eb] font-medium border-b border-gray-100">Pricing</a>
                 <a href="contact.html" class="block px-6 py-3 text-[#121516] hover:text-[#2563eb] font-medium">Contact Us</a>
             </div>
 
@@ -212,7 +212,7 @@
                     </div>
                 </div>
                 <div class="flex justify-center mt-0 mb-10">
-                  <a href="benefits-details.html" class="text-[#2563eb] font-semibold hover:underline flex items-center gap-1 text-sm">
+                  <a href="lessor-benefits.html" class="text-[#2563eb] font-semibold hover:underline flex items-center gap-1 text-sm">
                     Explore benefits more <span aria-hidden="true">→</span>
                   </a>
                 </div>
