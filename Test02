@@ -112,7 +112,7 @@
                     <h1 class="text-[#121516] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] mx-auto">
                         How It Works
                     </h1>
-                    <p class="text-[#121516] text-base font-normal leading-normal max-w-[720px] mx-auto">CarConnect simplifies leasing your car to your network:</p>
+                    <p class="text-[#121516] text-base font-normal leading-normal max-w-[720px] mx-auto">CarConnect simplifies leasing your car. You could be ready in minutes*.</p>
                 </div>
                 
                 <!-- Mobile-optimized grid: single column on mobile, original grid on larger screens -->
@@ -124,8 +124,8 @@
                             </svg>
                         </div>
                         <div class="flex flex-col gap-1">
-                            <h2 class="text-[#121516] text-base font-bold leading-tight">Identify</h2>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Explore who needs help with a car.</p>
+                            <h2 class="text-[#121516] text-base font-bold leading-tight">Establish</h2>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Set your objectives and choose your leasing criteria.</p>
                         </div>
                     </div>
                     
@@ -136,8 +136,8 @@
                             </svg>
                         </div>
                         <div class="flex flex-col gap-1">
-                            <h2 class="text-[#121516] text-base font-bold leading-tight">Manage</h2>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Complete our easy leasing process.</p>
+                            <h2 class="text-[#121516] text-base font-bold leading-tight">Complete</h2>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Review and setup quickly leveraging our expertise and tech.</p>
                         </div>
                     </div>
                     
@@ -148,8 +148,8 @@
                             </svg>
                         </div>
                         <div class="flex flex-col gap-1">
-                            <h2 class="text-[#121516] text-base font-bold leading-tight">Earn</h2>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Get paid securely, every month.</p>
+                            <h2 class="text-[#121516] text-base font-bold leading-tight">Launch</h2>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Start leasing your car(s) and begin earning income.</p>
                         </div>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
                     <h1 class="text-[#121516] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] mx-auto">
                         Benefits
                     </h1>
-                    <p class="text-[#121516] text-base font-normal leading-normal max-w-[720px] mx-auto">CarConnect offers key advantages for lessors and lessees:</p>
+                    <p class="text-[#121516] text-base font-normal leading-normal max-w-[720px] mx-auto">Discover why customers choose CarConnect—here are just a few of the benefits:</p>
                 </div>
                 
                 <!-- Mobile-optimized grid: single column on mobile, original grid on larger screens -->
@@ -170,8 +170,8 @@
                         <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
                              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2u-SJ4obR2ykXD5YYadLGyHaKR-yR4BfH9PpR4nI8dx4TtlFXQdcgW_4m5HCPyo44uOCNrVhof5jHcE-3SqUKofaECpgDXoBO6bCXtzmBUBgm7XWYIw-wojE2wDHVVqSmVizvrZDhmYeewHu4rTpC9GhD-vnUsdTm6MG1BCSKhPn98rk47UMn8nRXiUjQ267F59_aQiDDetlDmxdcj-m_9U_AqoTuKPWgdTaOJ9tg2mmGONeFFFPeaiWkaLAs1PRbLKOHQeRsmZg");'></div>
                         <div>
-                            <p class="text-[#121516] text-base font-medium leading-normal">Trust</p>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Lease to people you know, with peace of mind.</p>
+                            <p class="text-[#121516] text-base font-medium leading-normal">Financial returns</p>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Unlock extra income and enjoy potential tax savings by leasing your car.</p>
                         </div>
                     </div>
                     
@@ -179,8 +179,8 @@
                         <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
                              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAu3olEfqNiZMGygbYojppWGAXBuPLC7FkbRVbabCBA6LHpi1n6F-oNQ44EATqV6Ug_bJvOKLFZiuwU0ge2J8kJp_TTwuFfdhptNs0cGTO7Xwiok7DIvxgD0k0Q--5XNteRI0eHZN4hE-pSG2xwKc6q44MQbneKFDLgw6RoIaA3bQspuA03I2Xf9qgp_0DxJT48Xfa9RFC5Gf2SuRKmjo2eKOCMO7wY2iL0NgE3y6KUF73Kr8Ayx-12NFiDtUtfHez-NNIB1GBavEc");'></div>
                         <div>
-                            <p class="text-[#121516] text-base font-medium leading-normal">Flexibility</p>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Help your friends or family in a way that fits their needs.</p>
+                            <p class="text-[#121516] text-base font-medium leading-normal">Entrepreneurship</p>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Ready to build your own business? We’ll help you start and grow your car fleet with ease.</p>
                         </div>
                     </div>
                     
@@ -188,10 +188,15 @@
                         <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
                              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDA1kGELqPGcQHXageUxgiMiXum_4OMIgwboWio5khFZYSor5IWhSvQNuP0Vz45NSpv_imyepw1-U6CzpCBycsUF9qP3W3HU4XA5fmJGxq6Jrwy2qMNlZge17PuTgmrgkf7PYx82vedb9soKEQZBIug1aY1nOF6KnnHDH-tfUNYCkQUcX8GCu3oCjq1E1-IZQOM73ISHZYiwlYuBYT-uHr7HvVpk2DC0ZG9XnGkQECvwXxOysRyjReydjijvpg0TGriGl1aiMmGL4I");'></div>
                         <div>
-                            <p class="text-[#121516] text-base font-medium leading-normal">Returns</p>
-                            <p class="text-[#6a7781] text-sm font-normal leading-normal">You both gain, with unmatched benefits.</p>
+                            <p class="text-[#121516] text-base font-medium leading-normal">Protection</p>
+                            <p class="text-[#6a7781] text-sm font-normal leading-normal">Enjoy added liability protection—ideal for sharing with family, like a child in college.</p>
                         </div>
                     </div>
+                </div>
+                <div class="flex justify-center mt-0 mb-10">
+                  <a href="benefits-details.html" class="text-[#2563eb] font-semibold hover:underline flex items-center gap-1 text-sm">
+                    Explore benefits more <span aria-hidden="true">→</span>
+                  </a>
                 </div>
             </div>
 
