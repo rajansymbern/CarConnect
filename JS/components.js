@@ -6,23 +6,18 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Component loader starting. isLegalPage:', isLegalPage);
     console.log('Current pathname:', window.location.pathname);
     
-    // Try multiple path strategies
-    const pathStrategies = [
-        '/MasterPages/header.html',           // Absolute from root
-        '../MasterPages/header.html',         // Relative from Legal directory
-        'MasterPages/header.html'             // Relative from current directory
-    ];
-    
-    // Load header with fallback strategies
-    loadComponentWithFallbacks('header', pathStrategies);
-    
-    // Load footer with fallback strategies
-    const footerStrategies = [
-        '/MasterPages/footer.html',           // Absolute from root
-        '../MasterPages/footer.html',         // Relative from Legal directory
-        'MasterPages/footer.html'             // Relative from current directory
-    ];
-    loadComponentWithFallbacks('footer', footerStrategies);
+    // Use different paths based on whether we're on a Legal page or not
+    if (isLegalPage) {
+        // On Legal pages, use relative paths
+        console.log('Loading components with relative paths for Legal page');
+        loadComponent('header', '../MasterPages/header.html');
+        loadComponent('footer', '../MasterPages/footer.html');
+    } else {
+        // On main pages, use absolute paths
+        console.log('Loading components with absolute paths for main page');
+        loadComponent('header', '/MasterPages/header.html');
+        loadComponent('footer', '/MasterPages/footer.html');
+    }
     
     // Initialize mobile menu after components are loaded
     setTimeout(initMobileMenu, 100);
@@ -31,59 +26,44 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(fixPaths, 200);
 });
 
-function loadComponentWithFallbacks(elementId, pathStrategies) {
-    console.log('Attempting to load component:', elementId, 'with strategies:', pathStrategies);
+function loadComponent(elementId, filePath) {
+    console.log('Attempting to load component:', elementId, 'from:', filePath);
     
-    function tryNextStrategy(index) {
-        if (index >= pathStrategies.length) {
-            console.error('All strategies failed for', elementId);
-            return;
-        }
-        
-        const filePath = pathStrategies[index];
-        console.log('Trying strategy', index + 1, 'for', elementId, ':', filePath);
-        
-        fetch(filePath)
-            .then(response => {
-                console.log('Fetch response for', elementId, 'strategy', index + 1, ':', response.status, response.statusText);
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                }
-                return response.text();
-            })
-            .then(html => {
-                console.log('Successfully loaded', elementId, 'with strategy', index + 1, 'HTML length:', html.length);
-                const element = document.getElementById(elementId);
-                if (element) {
-                    element.innerHTML = html;
-                    console.log('Successfully inserted', elementId, 'into DOM');
-                    
-                    // Execute any scripts within the loaded component
-                    const scripts = element.querySelectorAll('script');
-                    console.log('Found', scripts.length, 'scripts in', elementId);
-                    scripts.forEach(script => {
-                        if (script.textContent) {
-                            // Create a new script element and execute it
-                            const newScript = document.createElement('script');
-                            newScript.textContent = script.textContent;
-                            document.head.appendChild(newScript);
-                            document.head.removeChild(newScript);
-                            console.log('Executed script from', elementId);
-                        }
-                    });
-                } else {
-                    console.error('Element with id', elementId, 'not found in DOM');
-                }
-            })
-            .catch(error => {
-                console.error('Strategy', index + 1, 'failed for', elementId, ':', error);
-                // Try next strategy
-                tryNextStrategy(index + 1);
-            });
-    }
-    
-    // Start with first strategy
-    tryNextStrategy(0);
+    fetch(filePath)
+        .then(response => {
+            console.log('Fetch response for', elementId, ':', response.status, response.statusText);
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            return response.text();
+        })
+        .then(html => {
+            console.log('Successfully loaded', elementId, 'HTML length:', html.length);
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.innerHTML = html;
+                console.log('Successfully inserted', elementId, 'into DOM');
+                
+                // Execute any scripts within the loaded component
+                const scripts = element.querySelectorAll('script');
+                console.log('Found', scripts.length, 'scripts in', elementId);
+                scripts.forEach(script => {
+                    if (script.textContent) {
+                        // Create a new script element and execute it
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.head.appendChild(newScript);
+                        document.head.removeChild(newScript);
+                        console.log('Executed script from', elementId);
+                    }
+                });
+            } else {
+                console.error('Element with id', elementId, 'not found in DOM');
+            }
+        })
+        .catch(error => {
+            console.error('Error loading component', elementId, ':', error);
+        });
 }
 
 function fixPaths() {
