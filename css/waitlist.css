@@ -28,8 +28,8 @@ body {
 }
 
 .header {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-    color: white;
+    background: #b2d0e5;
+    color: #121516;
     padding: 3rem 2rem;
     text-align: center;
     position: relative;
@@ -55,6 +55,12 @@ body {
 .header-content {
     position: relative;
     z-index: 1;
+}
+
+.header-content h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .form-section {

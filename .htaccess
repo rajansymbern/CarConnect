@@ -1,0 +1,17 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Set index.html as the default document
+DirectoryIndex index.html
+
+# Remove .html extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Redirect root to index.html without showing it in URL
+RewriteRule ^$ index.html [L]
+
+# Prevent direct access to .html files (optional)
+# RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+# RewriteRule ^ /%1 [NC,L,R=301] 
