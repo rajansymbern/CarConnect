@@ -4,11 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const isLegalPage = window.location.pathname.includes('/Legal/');
     const basePath = isLegalPage ? '../' : '';
     
+    console.log('Component loader starting. isLegalPage:', isLegalPage, 'basePath:', basePath);
+    console.log('Current pathname:', window.location.pathname);
+    
     // Load header
-    loadComponent('header', basePath + 'MasterPages/header.html');
+    const headerPath = basePath + 'MasterPages/header.html';
+    console.log('Loading header from:', headerPath);
+    loadComponent('header', headerPath);
     
     // Load footer
-    loadComponent('footer', basePath + 'MasterPages/footer.html');
+    const footerPath = basePath + 'MasterPages/footer.html';
+    console.log('Loading footer from:', footerPath);
+    loadComponent('footer', footerPath);
     
     // Initialize mobile menu after components are loaded
     setTimeout(initMobileMenu, 100);
@@ -18,15 +25,26 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function loadComponent(elementId, filePath) {
+    console.log('Attempting to load component:', elementId, 'from:', filePath);
+    
     fetch(filePath)
-        .then(response => response.text())
+        .then(response => {
+            console.log('Fetch response for', elementId, ':', response.status, response.statusText);
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            return response.text();
+        })
         .then(html => {
+            console.log('Successfully loaded', elementId, 'HTML length:', html.length);
             const element = document.getElementById(elementId);
             if (element) {
                 element.innerHTML = html;
+                console.log('Successfully inserted', elementId, 'into DOM');
                 
                 // Execute any scripts within the loaded component
                 const scripts = element.querySelectorAll('script');
+                console.log('Found', scripts.length, 'scripts in', elementId);
                 scripts.forEach(script => {
                     if (script.textContent) {
                         // Create a new script element and execute it
@@ -34,12 +52,15 @@ function loadComponent(elementId, filePath) {
                         newScript.textContent = script.textContent;
                         document.head.appendChild(newScript);
                         document.head.removeChild(newScript);
+                        console.log('Executed script from', elementId);
                     }
                 });
+            } else {
+                console.error('Element with id', elementId, 'not found in DOM');
             }
         })
         .catch(error => {
-            console.error('Error loading component:', error);
+            console.error('Error loading component', elementId, ':', error);
         });
 }
 
@@ -84,5 +105,8 @@ function initMobileMenu() {
         btn.addEventListener('click', function() {
             menu.classList.toggle('hidden');
         });
+        console.log('Mobile menu initialized');
+    } else {
+        console.log('Mobile menu elements not found');
     }
 } 
