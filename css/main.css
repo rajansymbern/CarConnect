@@ -1,0 +1,82 @@
+/* Main CSS for CarConnect Project */
+
+/* Global Styles */
+body {
+    font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+    background: #ffffff;
+    min-height: 100vh;
+}
+
+/* Mobile-specific optimizations */
+.mobile-touch-target {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.mobile-safe-area {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Mobile-optimized grid for single column layout */
+.mobile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Mobile-optimized spacing */
+.mobile-section {
+    padding: 1.5rem 1rem;
+}
+
+/* Mobile-optimized text sizes */
+.mobile-heading {
+    font-size: 1.75rem;
+    line-height: 2rem;
+}
+
+.mobile-subheading {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+}
+
+/* Mobile-optimized buttons */
+.mobile-button {
+    border-radius: 0.75rem;
+    padding: 0.875rem 1.25rem;
+    font-weight: 600;
+    min-height: 48px;
+}
+
+/* Mobile-optimized navigation */
+.mobile-nav-item {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    min-height: 44px;
+}
+
+/* Mobile-optimized images */
+.mobile-image {
+    border-radius: 0.75rem;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mobile-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+        gap: 1rem;
+    }
+} 

@@ -1,0 +1,455 @@
+/* Home Page Styles */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDl05X3RvhLfPorJ7DwIq6FEV0x48vMQ8qZU4ke8HJQzqg3R63hKj93ao0QSjbT6E8VhPkK4n1uzYhbAOG8yMaMv-WFldlXyxWSYIEa5PhoCVALbYVG8TOeLJtup3BwvUXkUnXfkQsrWEG71jbYKxpDJ0NIz0tcCLFx6YO94AZTRNyOZnp19OYD0Whmfgfk_F8KnYjLwMMYZaJZGDAXrBAMs8PlzPy3aiwfxankw4Hzf6IafHwiWbY6ppUMf2K-PgimjqlEpj5LsRE");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 6;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    position: relative;
+}
+
+/* Navigation */
+.nav-link {
+    color: #121516;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2563eb;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+}
+
+.mobile-menu.show {
+    display: flex;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: #121516;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid #f3f4f6;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    color: #2563eb;
+}
+
+/* Sections */
+.section {
+    padding: 2.5rem 1rem;
+}
+
+.section-title {
+    color: #121516;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: #121516;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border: 1px solid #dde1e3;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    color: #121516;
+    margin-bottom: 0.75rem;
+}
+
+.card-title {
+    color: #121516;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+}
+
+.card-description {
+    color: #6a7781;
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+/* Benefits Section */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.benefit-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-bottom: 0.75rem;
+    text-align: center;
+}
+
+.benefit-image {
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 16/9;
+    border-radius: 0.75rem;
+}
+
+.benefit-title {
+    color: #121516;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.benefit-description {
+    color: #6a7781;
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+/* CTA Section */
+.cta-section {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.cta-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 480px;
+    width: 100%;
+    align-items: stretch;
+    padding: 0.75rem 1rem;
+}
+
+.cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 9999px;
+    height: 3rem;
+    padding: 0 1.25rem;
+    background: #b2d0e5;
+    color: #121516;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    letter-spacing: 0.015em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 84px;
+    max-width: 480px;
+    width: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button.secondary {
+    background: #f1f2f4;
+}
+
+/* Family Leasing Promotion */
+.promotion-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    background: linear-gradient(to right, #b2d0e5, #e8f4f8);
+}
+
+.promotion-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #121516;
+    margin: 0 auto;
+}
+
+.promotion-title {
+    color: #121516;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.promotion-description {
+    color: #121516;
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.promotion-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.promotion-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 9999px;
+    height: 2.5rem;
+    padding: 0 1rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 1.4;
+    letter-spacing: 0.015em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.promotion-button.primary {
+    background: #121516;
+    color: white;
+}
+
+.promotion-button.primary:hover {
+    background: #2d3748;
+}
+
+.promotion-button.secondary {
+    background: white;
+    color: #121516;
+    border: 1px solid #dde1e3;
+}
+
+.promotion-button.secondary:hover {
+    background: #f9fafb;
+}
+
+/* Footer */
+.footer {
+    background: black;
+    border-top: 1px solid #374151;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.footer-company {
+    grid-column: span 1;
+}
+
+.footer-title {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-description {
+    color: #d1d5db;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-social a {
+    color: #d1d5db;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: white;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a {
+    color: #d1d5db;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copyright {
+    color: #d1d5db;
+    font-size: 0.875rem;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.footer-bottom-links a {
+    color: #d1d5db;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: white;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .hero-section {
+        padding: 1rem;
+        gap: 2rem;
+        border-radius: 0.75rem;
+    }
+    
+    .section-title {
+        font-size: 2.25rem;
+        font-weight: 900;
+        line-height: 1.2;
+        letter-spacing: -0.033em;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+        gap: 0.75rem;
+    }
+    
+    .promotion-buttons {
+        flex-direction: row;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .footer-company {
+        grid-column: span 2;
+    }
+    
+    .footer-bottom {
+        flex-direction: row;
+    }
+    
+    .footer-bottom-links {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 480px) {
+    .hero-section {
+        padding: 1rem;
+        gap: 2rem;
+        border-radius: 0.75rem;
+    }
+    
+    .section-title {
+        font-size: 2.25rem;
+        font-weight: 900;
+        line-height: 1.2;
+        letter-spacing: -0.033em;
+    }
+    
+    .cta-button {
+        height: 3rem;
+        padding: 0 1.25rem;
+        font-size: 1rem;
+        font-weight: bold;
+        line-height: 1.4;
+        letter-spacing: 0.015em;
+    }
+} 

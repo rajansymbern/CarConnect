@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarConnect: Become a Founding Fleet Builder</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/waitlist.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="header">
+            <div class="header-content">
+                <i class="fas fa-car text-4xl mb-4"></i>
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">CarConnect: Become a Founding Fleet Builder</h1>
+                <p class="text-lg opacity-90 leading-relaxed">
+                    Thank you for your interest in CarConnect, the new platform designed to help you build and manage a revenue-generating vehicle leasing business. We are looking for a select group of founding Fleet Builders to join us on our journey.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            
+            <div class="step-indicator">
+                <div class="step-dot active"></div>
+                <div class="step-dot"></div>
+                <div class="step-dot"></div>
+                <div class="step-dot"></div>
+            </div>
+
+            <form id="fleetBuilderForm" class="space-y-6">
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="fullName" class="form-label">
+                        <i class="fas fa-user mr-2 text-indigo-600"></i>Full Name
+                    </label>
+                    <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Enter your full name" required>
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        <i class="fas fa-envelope mr-2 text-indigo-600"></i>Email Address
+                    </label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label for="phone" class="form-label">
+                        <i class="fas fa-phone mr-2 text-indigo-600"></i>Phone Number
+                    </label>
+                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number" required>
+                </div>
+
+                <!-- Location -->
+                <div class="form-group">
+                    <label for="location" class="form-label">
+                        <i class="fas fa-map-marker-alt mr-2 text-indigo-600"></i>Where are you primarily located? (City, State)
+                    </label>
+                    <input type="text" id="location" name="location" class="form-input" placeholder="e.g., New York, NY" required>
+                </div>
+
+                <!-- Age Range -->
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-birthday-cake mr-2 text-indigo-600"></i>What is your age range?
+                    </label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="age25-34" name="ageRange" value="25-34" class="radio-input" required>
+                            <label for="age25-34">25-34</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="age35-44" name="ageRange" value="35-44" class="radio-input">
+                            <label for="age35-44">35-44</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="age45-54" name="ageRange" value="45-54" class="radio-input">
+                            <label for="age45-54">45-54</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="age55-64" name="ageRange" value="55-64" class="radio-input">
+                            <label for="age55-64">55-64</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="age65+" name="ageRange" value="65+" class="radio-input">
+                            <label for="age65+">65+</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Primary Goal -->
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-target mr-2 text-indigo-600"></i>What is your primary goal or interest in becoming a Fleet Builder?
+                    </label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="goal1" name="primaryGoal" value="Maximizing financial returns and generating a new income stream." class="radio-input" required>
+                            <label for="goal1">Maximizing financial returns and generating a new income stream.</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="goal2" name="primaryGoal" value="Building a fleet of cars that I am passionate about." class="radio-input">
+                            <label for="goal2">Building a fleet of cars that I am passionate about.</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="goal3" name="primaryGoal" value="Turning a vehicle I already own into a productive asset." class="radio-input">
+                            <label for="goal3">Turning a vehicle I already own into a productive asset.</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="goal4" name="primaryGoal" value="Other" class="radio-input">
+                            <label for="goal4">Other (please specify)</label>
+                        </div>
+                    </div>
+                    <input type="text" id="goalOther" name="goalOther" class="form-input mt-3" placeholder="Please specify..." style="display: none;">
+                </div>
+
+                <!-- Current Profession -->
+                <div class="form-group">
+                    <label for="profession" class="form-label">
+                        <i class="fas fa-briefcase mr-2 text-indigo-600"></i>What is your current profession or primary industry?
+                    </label>
+                    <input type="text" id="profession" name="profession" class="form-input" placeholder="e.g., Software Engineer, Healthcare, Finance" required>
+                </div>
+
+                <!-- LLC Question -->
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-building mr-2 text-indigo-600"></i>To operate your fleet, do you currently have an LLC or similar business entity, or would you be willing to start one?
+                    </label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="llc1" name="llcStatus" value="Yes, I already have an LLC I can use." class="radio-input" required>
+                            <label for="llc1">Yes, I already have an LLC I can use.</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="llc2" name="llcStatus" value="No, but I am willing to start a new LLC for this business." class="radio-input">
+                            <label for="llc2">No, but I am willing to start a new LLC for this business.</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="llc3" name="llcStatus" value="I'm not sure and would like to learn more." class="radio-input">
+                            <label for="llc3">I'm not sure and would like to learn more.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interview Question -->
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-comments mr-2 text-indigo-600"></i>To help us build the best possible product for our founding Fleet Builders, would you be open to a brief 20-minute interview with our team?
+                    </label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="interview1" name="interviewWillingness" value="Yes, I would be happy to help." class="radio-input" required>
+                            <label for="interview1">Yes, I would be happy to help.</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="interview2" name="interviewWillingness" value="Maybe, please send me more information first." class="radio-input">
+                            <label for="interview2">Maybe, please send me more information first.</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="interview3" name="interviewWillingness" value="No, thank you." class="radio-input">
+                            <label for="interview3">No, thank you.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                                    <button type="submit" class="submit-btn bg-[#b2d0e5] text-[#121516]" id="submitBtn">
+                    <span id="submitText">Submit Application</span>
+                    <span id="submitLoading" class="loading" style="display: none;"></span>
+                </button>
+                </div>
+            </form>
+
+            <!-- Success Message (hidden by default) -->
+            <div id="successMessage" class="hidden success-message">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Thank you for completing our interest form!</h2>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    Your submission has been received. Our beta product is scheduled to launch within the next two months, and as one of our earliest interested members, you will be among the first to be notified with an activation code.
+                </p>
+                <div class="mt-6">
+                    <i class="fas fa-envelope text-2xl text-indigo-600"></i>
+                    <p class="text-sm text-gray-500 mt-2">Check your email for confirmation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Supabase Client -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/supabase.js"></script>
+    <script>
+        // Handle "Other" option for primary goal
+        document.querySelectorAll('input[name="primaryGoal"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const otherInput = document.getElementById('goalOther');
+                if (this.value === 'Other') {
+                    otherInput.style.display = 'block';
+                    otherInput.required = true;
+                } else {
+                    otherInput.style.display = 'none';
+                    otherInput.required = false;
+                }
+            });
+        });
+
+        // Progress bar functionality
+        function updateProgress() {
+            const form = document.getElementById('fleetBuilderForm');
+            const inputs = form.querySelectorAll('input[required]');
+            const filledInputs = Array.from(inputs).filter(input => {
+                if (input.type === 'radio') {
+                    return input.checked;
+                }
+                return input.value.trim() !== '';
+            });
+            const progress = (filledInputs.length / inputs.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        // Add event listeners for progress tracking
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', updateProgress);
+            input.addEventListener('change', updateProgress);
+        });
+
+        // Handle form submission with Supabase
+        document.getElementById('fleetBuilderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleFormSubmission(this);
+        });
+
+        // Initialize progress
+        updateProgress();
+    </script>
+</body>
+</html> 
