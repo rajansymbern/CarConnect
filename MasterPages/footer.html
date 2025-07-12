@@ -52,27 +52,4 @@
             </div>
         </div>
     </div>
-</footer>
-
-<script>
-// Fix relative paths for Legal pages
-document.addEventListener('DOMContentLoaded', function() {
-    const isLegalPage = window.location.pathname.includes('/Legal/');
-    const basePath = isLegalPage ? '../' : '';
-    
-    // Update all navigation links
-    const links = document.querySelectorAll('a[href^="index.html"], a[href^="contact.html"], a[href^="Legal/"]');
-    links.forEach(link => {
-        if (link.href.includes('Legal/')) {
-            // For Legal links, we need to handle them differently
-            if (isLegalPage) {
-                // If we're on a Legal page, Legal links should be relative to current directory
-                link.href = link.href.replace('Legal/', '');
-            }
-        } else {
-            // For other links, add the base path
-            link.href = basePath + link.href;
-        }
-    });
-});
-</script> 
+</footer> 
