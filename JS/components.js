@@ -1,10 +1,14 @@
 // Component loader for header and footer
 document.addEventListener('DOMContentLoaded', function() {
+    // Detect if we're in a Legal subdirectory
+    const isLegalPage = window.location.pathname.includes('/Legal/');
+    const basePath = isLegalPage ? '../' : '';
+    
     // Load header
-    loadComponent('header', 'MasterPages/header.html');
+    loadComponent('header', basePath + 'MasterPages/header.html');
     
     // Load footer
-    loadComponent('footer', 'MasterPages/footer.html');
+    loadComponent('footer', basePath + 'MasterPages/footer.html');
     
     // Initialize mobile menu after components are loaded
     setTimeout(initMobileMenu, 100);

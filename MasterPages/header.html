@@ -19,4 +19,18 @@
     <a href="index.html#benefits" class="block px-6 py-3 text-[#121516] hover:text-[#2563eb] font-medium border-b border-gray-100">Benefits</a>
     <a href="pricing.html" class="block px-6 py-3 text-[#121516] hover:text-[#2563eb] font-medium border-b border-gray-100">Pricing</a>
     <a href="contact.html" class="block px-6 py-3 text-[#121516] hover:text-[#2563eb] font-medium">Contact Us</a>
-</div> 
+</div>
+
+<script>
+// Fix relative paths for Legal pages
+document.addEventListener('DOMContentLoaded', function() {
+    const isLegalPage = window.location.pathname.includes('/Legal/');
+    const basePath = isLegalPage ? '../' : '';
+    
+    // Update all navigation links
+    const links = document.querySelectorAll('a[href^="index.html"], a[href^="pricing.html"], a[href^="contact.html"]');
+    links.forEach(link => {
+        link.href = basePath + link.href;
+    });
+});
+</script> 
