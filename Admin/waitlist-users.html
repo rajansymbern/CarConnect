@@ -10,19 +10,33 @@
         body { background: #f7f7f7; }
         .admin-container { max-width: 1000px; margin: 2rem auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 2rem; }
         h1 { font-size: 2rem; margin-bottom: 1.5rem; }
-        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-        th, td { padding: 0.75rem 1rem; border-bottom: 1px solid #e5e7eb; text-align: left; }
+        .table-responsive { width: 100%; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; min-width: 900px; }
+        th, td { padding: 0.75rem 1rem; border-bottom: 1px solid #e5e7eb; text-align: left; white-space: nowrap; }
         th { background: #b2d0e5; color: #121516; }
         tr:last-child td { border-bottom: none; }
         .loading { text-align: center; margin: 2rem 0; }
         .error { color: #b91c1c; text-align: center; margin: 2rem 0; }
+        @media (max-width: 1100px) {
+            .admin-container { padding: 1rem; }
+            table { min-width: 700px; }
+        }
+        @media (max-width: 800px) {
+            .admin-container { padding: 0.5rem; }
+            table { min-width: 600px; }
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.2rem; }
+            table { min-width: 500px; font-size: 0.9rem; }
+            th, td { padding: 0.5rem 0.5rem; }
+        }
     </style>
     
 </head>
 <body>
     <div class="admin-container">
         <h1>Waitlist Users</h1>
-        <div id="table-container">
+        <div id="table-container" class="table-responsive">
             <div class="loading" id="loading">Loading users...</div>
             <div class="error" id="error" style="display:none;"></div>
             <table id="usersTable" style="display:none;">
@@ -69,15 +83,15 @@
             data.forEach(user => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <td>${user.fullName || ''}</td>
+                    <td>${user.full_name || ''}</td>
                     <td>${user.email || ''}</td>
                     <td>${user.phone || ''}</td>
                     <td>${user.location || ''}</td>
-                    <td>${user.ageRange || ''}</td>
-                    <td>${user.primaryGoal || user.goalOther || ''}</td>
+                    <td>${user.age_range || ''}</td>
+                    <td>${user.primary_goal || user.goal_other || ''}</td>
                     <td>${user.profession || ''}</td>
-                    <td>${user.llcStatus || ''}</td>
-                    <td>${user.interviewWillingness || ''}</td>
+                    <td>${user.llc_status || ''}</td>
+                    <td>${user.interview_willingness || ''}</td>
                     <td>${user.created_at ? new Date(user.created_at).toLocaleString() : ''}</td>
                 `;
                 tbody.appendChild(tr);
