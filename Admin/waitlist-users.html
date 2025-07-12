@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Waitlist Users</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/waitlist.css">
+    <style>
+        body { background: #f7f7f7; }
+        .admin-container { max-width: 1000px; margin: 2rem auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 2rem; }
+        h1 { font-size: 2rem; margin-bottom: 1.5rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 0.75rem 1rem; border-bottom: 1px solid #e5e7eb; text-align: left; }
+        th { background: #b2d0e5; color: #121516; }
+        tr:last-child td { border-bottom: none; }
+        .loading { text-align: center; margin: 2rem 0; }
+        .error { color: #b91c1c; text-align: center; margin: 2rem 0; }
+    </style>
+    
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Waitlist Users</h1>
+        <div id="table-container">
+            <div class="loading" id="loading">Loading users...</div>
+            <div class="error" id="error" style="display:none;"></div>
+            <table id="usersTable" style="display:none;">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Location</th>
+                        <th>Age Range</th>
+                        <th>Primary Goal</th>
+                        <th>Profession</th>
+                        <th>LLC Status</th>
+                        <th>Interview</th>
+                        <th>Submitted</th>
+                    </tr>
+                </thead>
+                <tbody id="usersBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/supabase.js"></script>
+    <script>
+    
+    async function fetchUsers() {
+        document.getElementById('loading').style.display = '';
+        document.getElementById('error').style.display = 'none';
+        document.getElementById('usersTable').style.display = 'none';
+        const { data, error } = await supabase
+            .from('waitlist_submissions')
+            .select('*')
+            .order('created_at', { ascending: false });
+        document.getElementById('loading').style.display = 'none';
+        if (error) {
+            document.getElementById('error').textContent = 'Error loading users: ' + error.message;
+            document.getElementById('error').style.display = '';
+            return;
+        }
+        if (data && data.length > 0) {
+            const tbody = document.getElementById('usersBody');
+            tbody.innerHTML = '';
+            data.forEach(user => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${user.fullName || ''}</td>
+                    <td>${user.email || ''}</td>
+                    <td>${user.phone || ''}</td>
+                    <td>${user.location || ''}</td>
+                    <td>${user.ageRange || ''}</td>
+                    <td>${user.primaryGoal || user.goalOther || ''}</td>
+                    <td>${user.profession || ''}</td>
+                    <td>${user.llcStatus || ''}</td>
+                    <td>${user.interviewWillingness || ''}</td>
+                    <td>${user.created_at ? new Date(user.created_at).toLocaleString() : ''}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+            document.getElementById('usersTable').style.display = '';
+        } else {
+            document.getElementById('error').textContent = 'No users found.';
+            document.getElementById('error').style.display = '';
+        }
+    }
+    fetchUsers();
+    </script>
+</body>
+</html> 
