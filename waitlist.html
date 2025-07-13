@@ -193,53 +193,6 @@
         </div>
     </div>
 
-    <!-- Supabase Client -->
-    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-    <script src="js/config.js"></script>
-    <script src="js/supabase.js"></script>
-    <script>
-        // Handle "Other" option for primary goal
-        document.querySelectorAll('input[name="primaryGoal"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                const otherInput = document.getElementById('goalOther');
-                if (this.value === 'Other') {
-                    otherInput.style.display = 'block';
-                    otherInput.required = true;
-                } else {
-                    otherInput.style.display = 'none';
-                    otherInput.required = false;
-                }
-            });
-        });
-
-        // Progress bar functionality
-        function updateProgress() {
-            const form = document.getElementById('fleetBuilderForm');
-            const inputs = form.querySelectorAll('input[required]');
-            const filledInputs = Array.from(inputs).filter(input => {
-                if (input.type === 'radio') {
-                    return input.checked;
-                }
-                return input.value.trim() !== '';
-            });
-            const progress = (filledInputs.length / inputs.length) * 100;
-            document.getElementById('progressFill').style.width = progress + '%';
-        }
-
-        // Add event listeners for progress tracking
-        document.querySelectorAll('input').forEach(input => {
-            input.addEventListener('input', updateProgress);
-            input.addEventListener('change', updateProgress);
-        });
-
-        // Handle form submission with Supabase
-        document.getElementById('fleetBuilderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            handleFormSubmission(this);
-        });
-
-        // Initialize progress
-        updateProgress();
-    </script>
+    
 </body>
 </html> 
