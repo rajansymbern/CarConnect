@@ -8,12 +8,56 @@
         <a href="/contact.html" class="text-[#121516] text-sm font-medium hover:text-[#2563eb] transition-colors">Contact</a>
     </nav>
     
-    <!-- Mobile Navigation -->
-    <nav class="md:hidden flex space-x-4">
-        <a href="/careers.html" class="text-[#121516] text-sm font-medium hover:text-[#2563eb] transition-colors">Careers</a>
-        <a href="/contact.html" class="text-[#121516] text-sm font-medium hover:text-[#2563eb] transition-colors">Contact</a>
-    </nav>
+    <!-- Mobile Hamburger Menu -->
+    <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-[#121516] hover:text-[#2563eb] transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+            <div class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg">
+                <div class="flex justify-between items-center p-4 border-b border-gray-200">
+                    <span class="text-[#121516] font-bold">Menu</span>
+                    <button id="close-menu-button" class="text-[#121516] hover:text-[#2563eb] transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="p-4 space-y-4">
+                    <a href="/careers.html" class="block text-[#121516] text-lg font-medium hover:text-[#2563eb] transition-colors py-2">Careers</a>
+                    <a href="/contact.html" class="block text-[#121516] text-lg font-medium hover:text-[#2563eb] transition-colors py-2">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const closeMenuButton = document.getElementById('close-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.remove('hidden');
+    });
+    
+    closeMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+    });
+    
+    // Close menu when clicking outside
+    mobileMenu.addEventListener('click', function(e) {
+        if (e.target === mobileMenu) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+});
+</script>
 
 <script>
 // Fix relative paths for Legal pages
