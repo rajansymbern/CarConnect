@@ -37,29 +37,52 @@
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu functionality
+function initMobileMenu() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const closeMenuButton = document.getElementById('close-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
-    mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.remove('hidden');
-    });
-    
-    closeMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.add('hidden');
-    });
-    
-    // Close menu when clicking outside
-    mobileMenu.addEventListener('click', function(e) {
-        if (e.target === mobileMenu) {
+    if (mobileMenuButton && closeMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+        
+        closeMenuButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             mobileMenu.classList.add('hidden');
-        }
-    });
-});
-</script>
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+        
+        // Close menu when clicking outside
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close menu when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+}
 
-<script>
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileMenu);
+} else {
+    initMobileMenu();
+}
+
 // Fix relative paths for Legal pages
 document.addEventListener('DOMContentLoaded', function() {
     const isLegalPage = window.location.pathname.includes('/Legal/');
