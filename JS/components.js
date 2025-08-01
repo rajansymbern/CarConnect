@@ -19,9 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
         loadComponent('footer', '/MasterPages/footer.html');
     }
     
-    // Initialize mobile menu after components are loaded
-    setTimeout(initMobileMenu, 100);
-    
     // Fix paths after components are loaded
     setTimeout(fixPaths, 200);
 });
@@ -98,15 +95,4 @@ function fixPaths() {
     });
 }
 
-function initMobileMenu() {
-    var btn = document.getElementById('mobile-menu-btn');
-    var menu = document.getElementById('mobile-menu');
-    if (btn && menu) {
-        btn.addEventListener('click', function() {
-            menu.classList.toggle('hidden');
-        });
-        console.log('Mobile menu initialized');
-    } else {
-        console.log('Mobile menu elements not found');
-    }
-} 
+ 
