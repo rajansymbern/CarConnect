@@ -53,6 +53,9 @@
     
     <!-- Common Styles -->
     <link rel="stylesheet" href="CommonCSS/styles.css">
+    
+    <!-- Supabase Client -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <div class="relative flex size-full min-h-screen flex-col bg-white justify-between group/design-root overflow-x-hidden mobile-safe-area">
@@ -173,6 +176,12 @@
     
     <!-- Form Handling Script -->
     <script>
+        // Initialize Supabase client
+        // Replace these with your actual Supabase credentials
+        const SUPABASE_URL = 'https://qorqpjgaupzwqojqwaur.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFvcnFwamdhdXB6d3FvanF3YXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQxNTU2MzAsImV4cCI6MjA2OTczMTYzMH0.EicNX9hGTagtInd4GTeBqf-vLOzwYtCO3uTCgCu3hOc';
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
         // Dynamic options for "What are you looking for?" based on role selection
         const roleInputs = document.querySelectorAll('input[name="role"]');
         const lookingForOptions = document.getElementById('looking-for-options');
@@ -234,19 +243,79 @@
             });
         });
         
-        document.getElementById('signup-form').addEventListener('submit', function(e) {
+        // Form submission with Supabase integration
+        document.getElementById('signup-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
             
-            // Here you would typically send the data to your backend
-            // For now, we'll just show a success message
-            alert('Thank you for joining our waitlist! We\'ll be in touch soon.');
-            
-            // Optionally redirect to a thank you page or back to home
-            // window.location.href = '/thank-you.html';
+            try {
+                // Show loading state
+                submitButton.innerHTML = '<span class="truncate">Submitting...</span>';
+                submitButton.disabled = true;
+                
+                // Get form data
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                // Get selected checkboxes for "looking-for"
+                const lookingForCheckboxes = document.querySelectorAll('input[name="looking-for"]:checked');
+                const lookingFor = Array.from(lookingForCheckboxes).map(cb => cb.value);
+                
+                // Get "other" specification if selected
+                const otherSpecify = document.querySelector('input[name="other-specify"]')?.value || null;
+                
+                // Prepare data for Supabase
+                const leadData = {
+                    first_name: data['first-name'],
+                    last_name: data['last-name'],
+                    email: data.email,
+                    phone: data.phone || null,
+                    role: data.role,
+                    timeline: data.timeline,
+                    looking_for: lookingFor,
+                    other_specify: otherSpecify
+                };
+                
+                // Validate required fields
+                if (!leadData.first_name || !leadData.last_name || !leadData.email || !leadData.role || !leadData.timeline || lookingFor.length === 0) {
+                    throw new Error('Please fill in all required fields.');
+                }
+                
+                // Validate email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(leadData.email)) {
+                    throw new Error('Please enter a valid email address.');
+                }
+                
+                // Insert data into Supabase
+                const { data: result, error } = await supabase
+                    .from('leads')
+                    .insert([leadData]);
+                
+                if (error) {
+                    if (error.code === '23505') { // Unique constraint violation
+                        throw new Error('This email address is already registered.');
+                    }
+                    throw new Error('Failed to submit form. Please try again.');
+                }
+                
+                // Success - show success message and reset form
+                alert('Thank you for grabbing your spot! We\'ll be in touch soon.');
+                this.reset();
+                
+                // Reset the dynamic options
+                lookingForOptions.innerHTML = '<p class="text-[#6a7781] text-sm italic">Please select your role above to see relevant options</p>';
+                
+            } catch (error) {
+                // Show error message
+                alert(error.message || 'An error occurred. Please try again.');
+            } finally {
+                // Reset button state
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            }
         });
     </script>
 </body>
