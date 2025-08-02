@@ -64,19 +64,19 @@
             <div class="flex flex-col gap-8 px-4 py-10 @container">
                 <div class="flex flex-col gap-4 text-center max-w-[600px] mx-auto">
                     <h1 class="text-[#121516] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
-                        Join the Waitlist
+                        Grab the Spot
                     </h1>
                     <p class="text-[#121516] text-lg font-normal leading-normal">
-                        Get early access to CarConnect when we launch on September 1st. Limited spots available.
+                        Launching on September 1st. Limited spots available for early access.
                     </p>
                 </div>
 
                 <!-- Survey Form -->
                 <div class="max-w-[600px] mx-auto w-full">
                     <form id="signup-form" class="flex flex-col gap-6">
-                        <!-- Basic Information -->
+                        <!-- Contact Information -->
                         <div class="flex flex-col gap-4">
-                            <h2 class="text-[#121516] text-xl font-bold leading-tight">Basic Information</h2>
+                            <h2 class="text-[#121516] text-xl font-bold leading-tight">Tell us how you'd like to be contacted</h2>
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
@@ -106,7 +106,7 @@
 
                         <!-- Role Selection -->
                         <div class="flex flex-col gap-4">
-                            <h2 class="text-[#121516] text-xl font-bold leading-tight">I am a...</h2>
+                            <h2 class="text-[#121516] text-xl font-bold leading-tight">I am a... *</h2>
                             <div class="space-y-3">
                                 <label class="flex items-center">
                                     <input type="radio" name="role" value="young-driver" class="mr-3" required>
@@ -116,16 +116,12 @@
                                     <input type="radio" name="role" value="parent" class="mr-3">
                                     <span class="text-[#121516] text-base">Parent helping my child get their first car</span>
                                 </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="role" value="other" class="mr-3">
-                                    <span class="text-[#121516] text-base">Other (please specify)</span>
-                                </label>
                             </div>
                         </div>
 
                         <!-- Timeline -->
                         <div class="flex flex-col gap-4">
-                            <h2 class="text-[#121516] text-xl font-bold leading-tight">When do you plan to get a car?</h2>
+                            <h2 class="text-[#121516] text-xl font-bold leading-tight">When do you plan to get a car? *</h2>
                             <div class="space-y-3">
                                 <label class="flex items-center">
                                     <input type="radio" name="timeline" value="within-3-months" class="mr-3" required>
@@ -146,49 +142,12 @@
                             </div>
                         </div>
 
-                        <!-- Budget Range -->
+                        <!-- What Are You Looking For (Dynamic) -->
                         <div class="flex flex-col gap-4">
-                            <h2 class="text-[#121516] text-xl font-bold leading-tight">What's your budget range?</h2>
-                            <div class="space-y-3">
-                                <label class="flex items-center">
-                                    <input type="radio" name="budget" value="under-10k" class="mr-3" required>
-                                    <span class="text-[#121516] text-base">Under $10,000</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="budget" value="10k-20k" class="mr-3">
-                                    <span class="text-[#121516] text-base">$10,000 - $20,000</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="budget" value="20k-30k" class="mr-3">
-                                    <span class="text-[#121516] text-base">$20,000 - $30,000</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="budget" value="over-30k" class="mr-3">
-                                    <span class="text-[#121516] text-base">Over $30,000</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="radio" name="budget" value="not-sure" class="mr-3">
-                                    <span class="text-[#121516] text-base">Not sure yet</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Additional Questions -->
-                        <div class="flex flex-col gap-4">
-                            <h2 class="text-[#121516] text-xl font-bold leading-tight">Additional Information</h2>
-                            
-                            <div>
-                                <label for="experience" class="block text-[#121516] text-sm font-medium mb-2">What's your biggest concern about getting a first car?</label>
-                                <textarea id="experience" name="experience" rows="3" 
-                                          class="w-full px-4 py-3 border border-[#dde1e3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b2d0e5] focus:border-transparent"
-                                          placeholder="Tell us about your concerns..."></textarea>
-                            </div>
-                            
-                            <div>
-                                <label for="additional-info" class="block text-[#121516] text-sm font-medium mb-2">Any additional information you'd like to share?</label>
-                                <textarea id="additional-info" name="additional-info" rows="3" 
-                                          class="w-full px-4 py-3 border border-[#dde1e3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b2d0e5] focus:border-transparent"
-                                          placeholder="Optional..."></textarea>
+                            <h2 class="text-[#121516] text-xl font-bold leading-tight">What are you looking for? (Select all that apply) *</h2>
+                            <div id="looking-for-options" class="space-y-3">
+                                <!-- Options will be populated by JavaScript based on role selection -->
+                                <p class="text-[#6a7781] text-sm italic">Please select your role above to see relevant options</p>
                             </div>
                         </div>
 
@@ -196,11 +155,8 @@
                         <div class="flex flex-col gap-4 pt-4">
                             <button type="submit" 
                                     class="mobile-touch-target flex min-w-[84px] max-w-[280px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[#b2d0e5] text-[#121516] text-base font-bold leading-normal tracking-[0.015em] mx-auto">
-                                <span class="truncate">Join Waitlist</span>
+                                <span class="truncate">Submit</span>
                             </button>
-                            <p class="text-[#6a7781] text-sm text-center">
-                                By joining the waitlist, you'll be among the first to know when CarConnect launches.
-                            </p>
                         </div>
                     </form>
                 </div>
@@ -217,6 +173,67 @@
     
     <!-- Form Handling Script -->
     <script>
+        // Dynamic options for "What are you looking for?" based on role selection
+        const roleInputs = document.querySelectorAll('input[name="role"]');
+        const lookingForOptions = document.getElementById('looking-for-options');
+        
+        const youngDriverOptions = [
+            { value: 'guidance-prepared', text: 'Get guidance to be better prepared to handle the situation confidently' },
+            { value: 'financial-skills', text: 'Learn financial skills in a real life situation' },
+            { value: 'smooth-parents', text: 'Get a car easily, smoothly from my parents' },
+            { value: 'curious', text: 'I\'m curious about the possibilities' },
+            { value: 'other', text: 'Other' }
+        ];
+        
+        const parentOptions = [
+            { value: 'guidance-family', text: 'Get guidance to make the best choice for my family' },
+            { value: 'teach-financial', text: 'Teach my child financial skills' },
+            { value: 'quick-execute', text: 'Quickly execute on getting a car for my child' },
+            { value: 'save-money', text: 'Save money (e.g., insurance)' },
+            { value: 'curious', text: 'I\'m curious about the possibilities' },
+            { value: 'other', text: 'Other' }
+        ];
+        
+        function updateLookingForOptions(role) {
+            const options = role === 'young-driver' ? youngDriverOptions : parentOptions;
+            
+            lookingForOptions.innerHTML = options.map(option => `
+                <label class="flex items-center">
+                    <input type="checkbox" name="looking-for" value="${option.value}" class="mr-3">
+                    <span class="text-[#121516] text-base">${option.text}</span>
+                </label>
+            `).join('');
+            
+            // Add event listener for "Other" option to show text input
+            const otherCheckbox = lookingForOptions.querySelector('input[value="other"]');
+            if (otherCheckbox) {
+                otherCheckbox.addEventListener('change', function() {
+                    const existingTextInput = lookingForOptions.querySelector('#other-specify');
+                    if (this.checked && !existingTextInput) {
+                        const textInput = document.createElement('div');
+                        textInput.id = 'other-specify';
+                        textInput.className = 'ml-6 mt-2';
+                        textInput.innerHTML = `
+                            <input type="text" name="other-specify" placeholder="Please specify..." 
+                                   class="w-full px-4 py-3 border border-[#dde1e3] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b2d0e5] focus:border-transparent">
+                        `;
+                        this.parentElement.appendChild(textInput);
+                    } else if (!this.checked && existingTextInput) {
+                        existingTextInput.remove();
+                    }
+                });
+            }
+        }
+        
+        // Add event listeners to role radio buttons
+        roleInputs.forEach(input => {
+            input.addEventListener('change', function() {
+                if (this.value === 'young-driver' || this.value === 'parent') {
+                    updateLookingForOptions(this.value);
+                }
+            });
+        });
+        
         document.getElementById('signup-form').addEventListener('submit', function(e) {
             e.preventDefault();
             

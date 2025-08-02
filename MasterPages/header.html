@@ -4,7 +4,8 @@
     
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex space-x-6">
-        <a id="dynamic-nav-link" href="/parents.html" class="text-[#121516] text-sm font-medium hover:text-[#2563eb] transition-colors">Parents</a>
+        <a href="/index.html" class="text-[#121516] text-sm font-medium hover:text-[#2563eb] transition-colors">Young Drivers</a>
+        <a href="/parents.html" class="text-[#121516] text-sm font-medium hover:text-[#2563eb] transition-colors">Parents</a>
         <a href="/careers.html" class="text-[#121516] text-sm font-medium hover:text-[#2563eb] transition-colors">Careers</a>
     </nav>
     
@@ -22,7 +23,8 @@
 <div id="mobile-menu" class="md:hidden fixed top-0 left-0 right-0 bg-white shadow-lg transform -translate-y-full transition-transform duration-300 ease-in-out z-40">
     <div class="px-4 py-6">
         <nav class="space-y-4">
-            <a id="mobile-dynamic-nav-link" href="/parents.html" class="block text-[#121516] text-lg font-medium hover:text-[#2563eb] transition-colors py-2">Parents</a>
+            <a href="/index.html" class="block text-[#121516] text-lg font-medium hover:text-[#2563eb] transition-colors py-2">Young Drivers</a>
+            <a href="/parents.html" class="block text-[#121516] text-lg font-medium hover:text-[#2563eb] transition-colors py-2">Parents</a>
             <a href="/careers.html" class="block text-[#121516] text-lg font-medium hover:text-[#2563eb] transition-colors py-2">Careers</a>
         </nav>
     </div>
@@ -69,44 +71,15 @@ function initMobileMenu() {
     }
 }
 
-// Dynamic navigation based on current page
-function updateNavigation() {
-    const currentPath = window.location.pathname;
-    const desktopLink = document.getElementById('dynamic-nav-link');
-    const mobileLink = document.getElementById('mobile-dynamic-nav-link');
-    
-    if (currentPath.includes('parents.html')) {
-        // On parents page, show "Young Drivers" linking to home
-        if (desktopLink) {
-            desktopLink.textContent = 'Young Drivers';
-            desktopLink.href = '/index.html';
-        }
-        if (mobileLink) {
-            mobileLink.textContent = 'Young Drivers';
-            mobileLink.href = '/index.html';
-        }
-    } else {
-        // On home page (or other pages), show "Parents" linking to parents page
-        if (desktopLink) {
-            desktopLink.textContent = 'Parents';
-            desktopLink.href = '/parents.html';
-        }
-        if (mobileLink) {
-            mobileLink.textContent = 'Parents';
-            mobileLink.href = '/parents.html';
-        }
-    }
-}
+// Navigation is now static with all three options always visible
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
         initMobileMenu();
-        updateNavigation();
     });
 } else {
     initMobileMenu();
-    updateNavigation();
 }
 
 // Fix relative paths for Legal pages
