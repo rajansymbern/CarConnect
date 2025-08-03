@@ -182,6 +182,113 @@
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFvcnFwamdhdXB6d3FvanF3YXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQxNTU2MzAsImV4cCI6MjA2OTczMTYzMH0.EicNX9hGTagtInd4GTeBqf-vLOzwYtCO3uTCgCu3hOc';
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         
+        // Resend API configuration
+        const RESEND_CONFIG = {
+            API_KEY: 're_83pQ1o1t_A7UXSdrf8vToVxRCLFgxFAPY', // Replace with your actual Resend API key
+            FROM_EMAIL: 'carconnect.info@symbern.com' // Use Resend's domain for testing
+        }
+        
+        // Function to send confirmation email via Resend API
+        async function sendConfirmationEmail(leadData) {
+            try {
+                // Create HTML email content
+                const htmlContent = `
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <meta charset="utf-8">
+                        <title>Welcome to CarConnect!</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+                            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+                            .header { background-color: #b2d0e5; padding: 20px; text-align: center; }
+                            .content { padding: 20px; }
+                            .details { background-color: #f9f9f9; padding: 15px; margin: 20px 0; border-radius: 5px; }
+                            .footer { text-align: center; padding: 20px; color: #666; }
+                            .highlight { background-color: #fff3cd; padding: 10px; border-radius: 5px; margin: 15px 0; }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="container">
+                            <div class="header">
+                                <h1>Welcome to CarConnect! 🚗</h1>
+                            </div>
+                            <div class="content">
+                                <p>Dear ${leadData.first_name},</p>
+                                
+                                <p>Thank you for joining the CarConnect waitlist! We're excited to have you on board for our September 1st launch.</p>
+                                
+                                <div class="highlight">
+                                    <strong>🎉 You're on the list!</strong><br>
+                                    We'll notify you as soon as early access becomes available.
+                                </div>
+                                
+                                <div class="details">
+                                    <h3>Your Registration Details:</h3>
+                                    <ul>
+                                        <li><strong>Name:</strong> ${leadData.first_name} ${leadData.last_name}</li>
+                                        <li><strong>Email:</strong> ${leadData.email}</li>
+                                        <li><strong>Phone:</strong> ${leadData.phone || 'Not provided'}</li>
+                                        <li><strong>Role:</strong> ${leadData.role === 'young-driver' ? 'Young Driver' : 'Parent'}</li>
+                                        <li><strong>Timeline:</strong> ${leadData.timeline.replace('-', ' ').replace(/(\b\w)/g, l => l.toUpperCase())}</li>
+                                        <li><strong>Looking for:</strong> ${leadData.looking_for.join(', ')}</li>
+                                        ${leadData.other_specify ? `<li><strong>Additional:</strong> ${leadData.other_specify}</li>` : ''}
+                                    </ul>
+                                </div>
+                                
+                                <p><strong>What's next?</strong></p>
+                                <ul>
+                                    <li>We'll send you updates as we get closer to launch</li>
+                                    <li>You'll be among the first to know when early access opens</li>
+                                    <li>We'll share exclusive content and tips for your car journey</li>
+                                </ul>
+                                
+                                <p>If you have any questions, feel free to reply to this email.</p>
+                            </div>
+                            <div class="footer">
+                                <p>Best regards,<br>The CarConnect Team</p>
+                                <p><small>Launching September 1st, 2024</small></p>
+                            </div>
+                        </div>
+                    </body>
+                    </html>
+                `
+
+                console.log('Sending confirmation email via Resend...')
+
+                // Send email using Resend API
+                const response = await fetch('https://api.resend.com/emails', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${RESEND_CONFIG.API_KEY}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        from: `CarConnect Team <${RESEND_CONFIG.FROM_EMAIL}>`,
+                        to: [`${leadData.first_name} ${leadData.last_name} <${leadData.email}>`],
+                        subject: 'Welcome to CarConnect! 🚗 You\'re on the list!',
+                        html: htmlContent,
+                    })
+                })
+
+                console.log('Resend response status:', response.status)
+
+                if (!response.ok) {
+                    const errorData = await response.json()
+                    console.error('Resend API error:', errorData)
+                    throw new Error(`Resend API error: ${errorData.message || response.statusText}`)
+                }
+
+                const result = await response.json()
+                console.log('Confirmation email sent successfully via Resend:', result)
+                return { success: true, data: result }
+
+            } catch (error) {
+                console.error('Email sending failed:', error)
+                throw error
+            }
+        }
+        
         // Dynamic options for "What are you looking for?" based on role selection
         const roleInputs = document.querySelectorAll('input[name="role"]');
         const lookingForOptions = document.getElementById('looking-for-options');
@@ -301,8 +408,17 @@
                     throw new Error('Failed to submit form. Please try again.');
                 }
                 
+                // Send confirmation email via Resend
+                try {
+                    await sendConfirmationEmail(leadData);
+                    console.log('Confirmation email sent successfully');
+                } catch (emailError) {
+                    console.warn('Email sending failed:', emailError);
+                    // Don't show error to user since form submission was successful
+                }
+                
                 // Success - show success message and reset form
-                alert('Thank you for grabbing your spot! We\'ll be in touch soon.');
+                alert('Thank you for grabbing your spot! We\'ll be in touch soon. Check your email for confirmation.');
                 this.reset();
                 
                 // Reset the dynamic options
