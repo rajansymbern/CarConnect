@@ -182,13 +182,10 @@
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFvcnFwamdhdXB6d3FvanF3YXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQxNTU2MzAsImV4cCI6MjA2OTczMTYzMH0.EicNX9hGTagtInd4GTeBqf-vLOzwYtCO3uTCgCu3hOc';
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         
-        // Resend API configuration
-        const RESEND_CONFIG = {
-            API_KEY: 're_83pQ1o1t_A7UXSdrf8vToVxRCLFgxFAPY', // Replace with your actual Resend API key
-            FROM_EMAIL: 'rajan@resend.dev' // Use Resend's domain for testing
-        }
+        // Supabase Edge Function configuration for email sending
+        const EMAIL_FUNCTION_URL = 'https://qorqpjgaupzwqojqwaur.supabase.co/functions/v1/send-email'
         
-        // Function to send confirmation email via Resend API
+        // Function to send confirmation email via Supabase Edge Function
         async function sendConfirmationEmail(leadData) {
             try {
                 // Create HTML email content
@@ -254,33 +251,32 @@
                     </html>
                 `
 
-                console.log('Sending confirmation email via Resend...')
+                console.log('Sending confirmation email via Supabase Edge Function...')
 
-                // Send email using Resend API
-                const response = await fetch('https://api.resend.com/emails', {
+                // Send email using Supabase Edge Function
+                const response = await fetch(EMAIL_FUNCTION_URL, {
                     method: 'POST',
                     headers: {
-                        'Authorization': `Bearer ${RESEND_CONFIG.API_KEY}`,
                         'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
                     },
                     body: JSON.stringify({
-                        from: `CarConnect Team <${RESEND_CONFIG.FROM_EMAIL}>`,
-                        to: [`${leadData.first_name} ${leadData.last_name} <${leadData.email}>`],
+                        to_email: leadData.email,
                         subject: 'Welcome to CarConnect! 🚗 You\'re on the list!',
-                        html: htmlContent,
+                        html_content: htmlContent,
                     })
                 })
 
-                console.log('Resend response status:', response.status)
+                console.log('Edge Function response status:', response.status)
 
                 if (!response.ok) {
                     const errorData = await response.json()
-                    console.error('Resend API error:', errorData)
-                    throw new Error(`Resend API error: ${errorData.message || response.statusText}`)
+                    console.error('Edge Function error:', errorData)
+                    throw new Error(`Email sending failed: ${errorData.details || errorData.error || response.statusText}`)
                 }
 
                 const result = await response.json()
-                console.log('Confirmation email sent successfully via Resend:', result)
+                console.log('Confirmation email sent successfully via Edge Function:', result)
                 return { success: true, data: result }
 
             } catch (error) {
