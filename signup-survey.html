@@ -188,66 +188,90 @@
         // Function to send confirmation email via Supabase Edge Function
         async function sendConfirmationEmail(leadData) {
             try {
-                // Create HTML email content
+                // Create HTML email content using the template
                 const htmlContent = `
                     <!DOCTYPE html>
                     <html>
-                    <head>
-                        <meta charset="utf-8">
-                        <title>Welcome to CarConnect!</title>
+                      <head>
+                        <meta charset="UTF-8" />
+                        <title>More than a car. This is a journey.</title>
                         <style>
-                            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-                            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-                            .header { background-color: #b2d0e5; padding: 20px; text-align: center; }
-                            .content { padding: 20px; }
-                            .details { background-color: #f9f9f9; padding: 15px; margin: 20px 0; border-radius: 5px; }
-                            .footer { text-align: center; padding: 20px; color: #666; }
-                            .highlight { background-color: #fff3cd; padding: 10px; border-radius: 5px; margin: 15px 0; }
+                          body {
+                            font-family: Arial,sans-serif;
+                            color: #333333;
+                            background-color: #ffffff;
+                            margin: 0;
+                            padding: 0;
+                          }
+                          .container {
+                            width: 100%;
+                            max-width: 600px;
+                            margin: auto;
+                            padding: 20px;
+                          }
+                          .hero-img {
+                            width: 100%;
+                            height: auto;
+                            display: block;
+                            border-radius: 8px;
+                          }
+                          h2 {
+                            font-size: 22px;
+                            margin-bottom: 10px;
+                          }
+                          p {
+                            font-size: 11pt!important;
+                            font-family:Arial, sans-serif;
+                            line-height: 1.2;
+                            background-color:transparent;
+                            font-variant-numeric:normal;
+                            font-variant-east-asian:normal;
+                            font-variant-alternates:normal;
+                            vertical-align:baseline;
+
+                          }
+                          .signature {
+                            margin-top: 30px;
+                          }
                         </style>
-                    </head>
-                    <body>
+                      </head>
+                      <body>
                         <div class="container">
-                            <div class="header">
-                                <h1>Welcome to CarConnect! 🚗</h1>
-                            </div>
-                            <div class="content">
-                                <p>Dear ${leadData.first_name},</p>
-                                
-                                <p>Thank you for joining the CarConnect waitlist! We're excited to have you on board for our September 1st launch.</p>
-                                
-                                <div class="highlight">
-                                    <strong>🎉 You're on the list!</strong><br>
-                                    We'll notify you as soon as early access becomes available.
-                                </div>
-                                
-                                <div class="details">
-                                    <h3>Your Registration Details:</h3>
-                                    <ul>
-                                        <li><strong>Name:</strong> ${leadData.first_name} ${leadData.last_name}</li>
-                                        <li><strong>Email:</strong> ${leadData.email}</li>
-                                        <li><strong>Phone:</strong> ${leadData.phone || 'Not provided'}</li>
-                                        <li><strong>Role:</strong> ${leadData.role === 'young-driver' ? 'Young Driver' : 'Parent'}</li>
-                                        <li><strong>Timeline:</strong> ${leadData.timeline.replace('-', ' ').replace(/(\b\w)/g, l => l.toUpperCase())}</li>
-                                        <li><strong>Looking for:</strong> ${leadData.looking_for.join(', ')}</li>
-                                        ${leadData.other_specify ? `<li><strong>Additional:</strong> ${leadData.other_specify}</li>` : ''}
-                                    </ul>
-                                </div>
-                                
-                                <p><strong>What's next?</strong></p>
-                                <ul>
-                                    <li>We'll send you updates as we get closer to launch</li>
-                                    <li>You'll be among the first to know when early access opens</li>
-                                    <li>We'll share exclusive content and tips for your car journey</li>
-                                </ul>
-                                
-                                <p>If you have any questions, feel free to reply to this email.</p>
-                            </div>
-                            <div class="footer">
-                                <p>Best regards,<br>The CarConnect Team</p>
-                                <p><small>Launching September 1st, 2024</small></p>
-                            </div>
+                          <!-- Header Image -->
+                          <img
+                            src="https://carconnect.symbern.com/Pictures/young-driver-first-car-experience-freedom.jpg"
+                            alt="Young drivers in a blue car"
+                            class="hero-img"
+                          />
+
+                        
+                          <!-- Body Content -->
+                          <p>Hi ${leadData.first_name},</p>
+
+                          <p>
+                            Getting the first car is a rite of passage. The paperwork, insurance
+                            headaches, and surprise costs? Not so much.
+                          </p>
+
+                          <p>We fix that.</p>
+
+                          <p>
+                            CarConnect is a guided platform that helps turn a stressful car process
+                            into a simple, transparent journey.
+                          </p>
+
+                          <p>
+                            We handle the details so you can focus on what truly matters: getting on
+                            the road, learning financial skills, gaining independence and peace of
+                            mind.
+                          </p>
+
+                          <p class="signature">See you on September 1st.</p>
+
+                          <p class="signature">All the best,</p>
+                          <p class="signature">The CarConnect Team</p>
                         </div>
-                    </body>
+                      </body>
                     </html>
                 `
 
@@ -262,7 +286,7 @@
                     },
                     body: JSON.stringify({
                         to_email: leadData.email,
-                        subject: 'Welcome to CarConnect! 🚗 You\'re on the list!',
+                        subject: 'More than a car. This is a journey.',
                         html_content: htmlContent,
                     })
                 })
